@@ -3,7 +3,7 @@ require 'rest-client'
 require 'json'
 
 url = 'https://api.github.com/search/repositories?'
-q = 'spotcode'
+q = 'ecommerce_api'
 language = 'ruby'
 
 resp = RestClient.get "#{url}q=#{q}&language=#{language}"
@@ -16,4 +16,4 @@ puts resp.code
 puts ""
 puts JSON.parse(resp.body)["total_count"]
 puts ""
-puts JSON.parse(resp.body)["items"][29]["name"]
+puts JSON.parse(resp.body)["items"][0]["name"]
